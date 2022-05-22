@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="5" hostname="c1bd5b6e53da" name="pytest" skipped="0" tests="19" time="0.506" timestamp="2022-05-22T21:52:28.884305"><testcase classname="test.unit.calc_test.TestCalculate" name="test_add_method_fails_with_nan_parameter" time="0.002"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_add_method_returns_correct_result" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_fails_with_division_by_zero" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_fails_with_nan_parameter" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_divide_method_returns_correct_result" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_method_fails_with_nan_parameter" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_method_fails_with_negative_or_zero_parameter" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_log10_method_returns_correct_result" time="0.001"><failure message="AssertionError: 1.301 != 1.3010299956639813 within 1e-07 delta">self = &lt;unit.calc_test.TestCalculate testMethod=test_log10_method_returns_correct_result&gt;
+
+    def test_log10_method_returns_correct_result(self):
+        self.assertEqual(1, self.calc.log10(10))
+&gt;       self.assertAlmostEqual(1.3010, self.calc.log10(20), delta=0.0000001)
+E       AssertionError: 1.301 != 1.3010299956639813 within 1e-07 delta
+
+test/unit/calc_test.py:54: AssertionError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_multiply_method_fails_with_nan_parameter" time="0.001"><failure message="TypeError: test_multiply_method_fails_with_nan_parameter() takes 1 positional argument but 2 were given">args = (&lt;unit.calc_test.TestCalculate testMethod=test_multiply_method_fails_with_nan_parameter&gt;, &lt;MagicMock name=&apos;validate_permissions&apos; id=&apos;140029294744240&apos;&gt;)
+keywargs = {}
+extra_args = [&lt;MagicMock name=&apos;validate_permissions&apos; id=&apos;140029294744240&apos;&gt;]
+entered_patchers = [&lt;unittest.mock._patch object at 0x7f5b1c8f6390&gt;]
+exc_info = (&lt;class &apos;TypeError&apos;&gt;, TypeError(&apos;test_multiply_method_fails_with_nan_parameter() takes 1 positional argument but 2 were given&apos;,), &lt;traceback object at 0x7f5b1c6104c8&gt;)
+patching = &lt;unittest.mock._patch object at 0x7f5b1c8f6390&gt;
+arg = &lt;MagicMock name=&apos;validate_permissions&apos; id=&apos;140029294744240&apos;&gt;
+
+    @wraps(func)
+    def patched(*args, **keywargs):
+        extra_args = []
+        entered_patchers = []
+    
+        exc_info = tuple()
+        try:
+            for patching in patched.patchings:
+                arg = patching.__enter__()
+                entered_patchers.append(patching)
+                if patching.attribute_name is not None:
+                    keywargs.update(arg)
+                elif patching.new is DEFAULT:
+                    extra_args.append(arg)
+    
+            args += tuple(extra_args)
+&gt;           return func(*args, **keywargs)
+E           TypeError: test_multiply_method_fails_with_nan_parameter() takes 1 positional argument but 2 were given
+
+/usr/local/lib/python3.6/unittest/mock.py:1183: TypeError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_multiply_method_returns_correct_result" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_power_method_fails_with_nan_parameter" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_power_method_returns_correct_result" time="0.001"><failure message="AssertionError: 2.838 != 2.8284271247461903 within 1e-07 delta">self = &lt;unit.calc_test.TestCalculate testMethod=test_power_method_returns_correct_result&gt;
+
+    def test_power_method_returns_correct_result(self):
+        self.assertEqual(4, self.calc.power(2, 2))
+        self.assertEqual(531441, self.calc.power(3, 12))
+&gt;       self.assertAlmostEqual(2.838, self.calc.power(2, 1.5), delta=0.0000001)
+E       AssertionError: 2.838 != 2.8284271247461903 within 1e-07 delta
+
+test/unit/calc_test.py:45: AssertionError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_square_method_fails_with_nan_parameter" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_square_method_fails_with_negative_parameter" time="0.001"><failure message="AssertionError: TypeError not raised by square">self = &lt;unit.calc_test.TestCalculate testMethod=test_square_method_fails_with_negative_parameter&gt;
+
+    def test_square_method_fails_with_negative_parameter(self):
+&gt;       self.assertRaises(TypeError, self.calc.square, -0)
+E       AssertionError: TypeError not raised by square
+
+test/unit/calc_test.py:107: AssertionError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_square_method_returns_correct_result" time="0.001"><failure message="AssertionError: 1.2247 != 1.224744871391589 within 1e-07 delta">self = &lt;unit.calc_test.TestCalculate testMethod=test_square_method_returns_correct_result&gt;
+
+    def test_square_method_returns_correct_result(self):
+        self.assertEqual(3, self.calc.square(9))
+        self.assertEqual(9, self.calc.square(81))
+&gt;       self.assertAlmostEqual(1.2247, self.calc.square(1.5), delta=0.0000001)
+E       AssertionError: 1.2247 != 1.224744871391589 within 1e-07 delta
+
+test/unit/calc_test.py:50: AssertionError</failure></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_substract_method_fails_with_nan_parameter" time="0.001"></testcase><testcase classname="test.unit.calc_test.TestCalculate" name="test_substract_method_returns_correct_result" time="0.001"></testcase><testcase classname="test.unit.util_test.TestUtil" name="test_convert_to_number_correct_param" time="0.001"></testcase><testcase classname="test.unit.util_test.TestUtil" name="test_convert_to_number_invalid_type" time="0.001"></testcase></testsuite></testsuites>
