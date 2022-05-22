@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite errors="0" failures="3" hostname="e91cdd428b2b" name="pytest" skipped="0" tests="9" time="1.002" timestamp="2022-05-22T22:06:20.841406"><testcase classname="test.rest.api_test.TestApi" name="test_api_add" time="0.016"></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_divide" time="0.014"><failure message="urllib.error.HTTPError: HTTP Error 400: BAD REQUEST">self = &lt;rest.api_test.TestApi testMethod=test_api_divide&gt;
+
+    def test_api_divide(self):
+        url = f&quot;{BASE_URL}/calc/divide/2/0&quot;
+&gt;       response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+
+test/rest/api_test.py:49: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.6/urllib/request.py:223: in urlopen
+    return opener.open(url, data, timeout)
+/usr/local/lib/python3.6/urllib/request.py:532: in open
+    response = meth(req, response)
+/usr/local/lib/python3.6/urllib/request.py:642: in http_response
+    &apos;http&apos;, request, response, code, msg, hdrs)
+/usr/local/lib/python3.6/urllib/request.py:570: in error
+    return self._call_chain(*args)
+/usr/local/lib/python3.6/urllib/request.py:504: in _call_chain
+    result = func(*args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;urllib.request.HTTPDefaultErrorHandler object at 0x7f57de6b22e8&gt;
+req = &lt;urllib.request.Request object at 0x7f57de6b2198&gt;
+fp = &lt;http.client.HTTPResponse object at 0x7f57de6b2978&gt;, code = 400
+msg = &apos;BAD REQUEST&apos;, hdrs = &lt;http.client.HTTPMessage object at 0x7f57de684b70&gt;
+
+    def http_error_default(self, req, fp, code, msg, hdrs):
+&gt;       raise HTTPError(req.full_url, code, msg, hdrs, fp)
+E       urllib.error.HTTPError: HTTP Error 400: BAD REQUEST
+
+/usr/local/lib/python3.6/urllib/request.py:650: HTTPError</failure></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_log10" time="0.003"></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_log10_fail" time="0.003"><failure message="urllib.error.HTTPError: HTTP Error 400: BAD REQUEST">self = &lt;rest.api_test.TestApi testMethod=test_api_log10_fail&gt;
+
+    def test_api_log10_fail(self):
+        url = f&quot;{BASE_URL}/calc/log10/0&quot;
+&gt;       response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+
+test/rest/api_test.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.6/urllib/request.py:223: in urlopen
+    return opener.open(url, data, timeout)
+/usr/local/lib/python3.6/urllib/request.py:532: in open
+    response = meth(req, response)
+/usr/local/lib/python3.6/urllib/request.py:642: in http_response
+    &apos;http&apos;, request, response, code, msg, hdrs)
+/usr/local/lib/python3.6/urllib/request.py:570: in error
+    return self._call_chain(*args)
+/usr/local/lib/python3.6/urllib/request.py:504: in _call_chain
+    result = func(*args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;urllib.request.HTTPDefaultErrorHandler object at 0x7f57de6b22e8&gt;
+req = &lt;urllib.request.Request object at 0x7f57df500e10&gt;
+fp = &lt;http.client.HTTPResponse object at 0x7f57de6b29b0&gt;, code = 400
+msg = &apos;BAD REQUEST&apos;, hdrs = &lt;http.client.HTTPMessage object at 0x7f57de6b2be0&gt;
+
+    def http_error_default(self, req, fp, code, msg, hdrs):
+&gt;       raise HTTPError(req.full_url, code, msg, hdrs, fp)
+E       urllib.error.HTTPError: HTTP Error 400: BAD REQUEST
+
+/usr/local/lib/python3.6/urllib/request.py:650: HTTPError</failure></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_multiply" time="0.003"></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_power" time="0.003"></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_square" time="0.002"></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_square_fail" time="0.003"><failure message="urllib.error.HTTPError: HTTP Error 404: NOT FOUND">self = &lt;rest.api_test.TestApi testMethod=test_api_square_fail&gt;
+
+    def test_api_square_fail(self):
+        url = f&quot;{BASE_URL}/calc/squareroot/2&quot;
+&gt;       response = urlopen(url, timeout=DEFAULT_TIMEOUT)
+
+test/rest/api_test.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+/usr/local/lib/python3.6/urllib/request.py:223: in urlopen
+    return opener.open(url, data, timeout)
+/usr/local/lib/python3.6/urllib/request.py:532: in open
+    response = meth(req, response)
+/usr/local/lib/python3.6/urllib/request.py:642: in http_response
+    &apos;http&apos;, request, response, code, msg, hdrs)
+/usr/local/lib/python3.6/urllib/request.py:570: in error
+    return self._call_chain(*args)
+/usr/local/lib/python3.6/urllib/request.py:504: in _call_chain
+    result = func(*args)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;urllib.request.HTTPDefaultErrorHandler object at 0x7f57de6b22e8&gt;
+req = &lt;urllib.request.Request object at 0x7f57df500e48&gt;
+fp = &lt;http.client.HTTPResponse object at 0x7f57df500400&gt;, code = 404
+msg = &apos;NOT FOUND&apos;, hdrs = &lt;http.client.HTTPMessage object at 0x7f57df506630&gt;
+
+    def http_error_default(self, req, fp, code, msg, hdrs):
+&gt;       raise HTTPError(req.full_url, code, msg, hdrs, fp)
+E       urllib.error.HTTPError: HTTP Error 404: NOT FOUND
+
+/usr/local/lib/python3.6/urllib/request.py:650: HTTPError</failure></testcase><testcase classname="test.rest.api_test.TestApi" name="test_api_substract" time="0.003"></testcase></testsuite></testsuites>
